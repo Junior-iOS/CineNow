@@ -1,30 +1,80 @@
 name: CineNow
+
+schemes:
+  CineNow:
+    build:
+      targets:
+        CineNow: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+    archive:
+      config: Release
+
 options:
-  bundleIdPrefix: com.njdevelopment
-  deploymentTarget:
-    iOS: "17.0"
+  indentWidth: 4
+  tabWidth: 4
+  groupSortPosition: top
+  xcodeVersion: 0800
+  groupOrdering:
+    - order: [CineNow, CineNowTests]
+
+configs:
+  Debug: debug
+  Release: release
 
 settings:
   base:
-    SWIFT_VERSION: 5.9
+    IPHONEOS_DEPLOYMENT_TARGET: 18.0
+    SWIFT_VERSION: 6.0
 
 targets:
+
+  Core:
+    type: framework
+    platform: iOS
+    sources:
+      - path: CineNow/Sources/Core
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.njdevelopment.CineNow.core
+        GENERATE_INFOPLIST_FILE: YES
+
   CineNow:
     type: application
     platform: iOS
+
+    configFiles:
+      Debug: Config/Debug.xcconfig
+      Release: Config/Release.xcconfig
+
     sources:
-      - path: CineNow/Sources
+      - path: CineNow/Sources/App
+      - path: CineNow/Sources/Features
+
     resources:
-      - path: CineNow/Resources
+      - path: CineNow/Assets
+        optional: true
       - path: CineNow/Colors
         optional: true
+
+    dependencies:
+      - target: Core
+
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.njdevelopment.CineNow
+        DEVELOPMENT_TEAM: Nelson Silva
+        CODE_SIGN_STYLE: Automatic
+
+      configs:
+        Debug:
+          INFOPLIST_KEY_TMDB_API_KEY: $(TMDB_API_KEY)
+        Release:
+          INFOPLIST_KEY_TMDB_API_KEY: $(TMDB_API_KEY)
+
     info:
-      path: Sources/App/Info.plist
+      path: CineNow/Sources/App/Info.plist
       properties:
-        UILaunchScreen:
-          UIColorName: ""
-        UIApplicationSceneManifest:
-          UIApplicationSupportsMultipleScenes: true
+        UILaunchStoryboardName: LaunchScreen
