@@ -17,9 +17,14 @@ xcuserdata/
 timeline.xctimeline
 playground.xcworkspace
 
+# Secrets
+CineNow Secrets/
+Secrets.xcconfig
+
 # Xcode
 DerivedData/
 *.xcuserdata
+*.xcshareddata
 *.xcuserstate
 *.xccheckout
 *.xcscmblueprint

@@ -1,24 +1,81 @@
 //
-//  ContentView.swift
-//  CineNow
+//  HomeTabView.swift
+//  Flix
 //
 //  Created by NJ Development on 26/01/26.
 //
 
 import SwiftUI
 
-struct ContentView: View {
+enum Tab: Hashable {
+    case home
+    case upcoming
+    case popular
+    case settings
+}
+
+struct HomeTabView: View {
+    @State private var selection: Tab = .home
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView(selection: $selection) {
+            homeView
+            upcomingView
+            popularView
+            settingsView
         }
-        .padding()
+//        .tint(.appTheme.accent)
     }
 }
 
-#Preview {
-    ContentView()
+private extension HomeTabView {
+    var homeView: some View {
+        NavigationStack {
+            HomeView()
+                .navigationTitle("Home")
+                .navigationBarTitleDisplayMode(.inline)
+        }
+        .tabItem {
+            Image(icon: selection == .home ? .playHouseFill : .house)
+            Text("Home")
+        }
+        .tag(Tab.home)
+    }
+
+    var upcomingView: some View {
+        UpcomingMoviesView()
+            .tabItem {
+                Image(icon: selection == .upcoming ? .calendarBadgeCheckmark : .calendar)
+                Text("Upcoming")
+            }
+            .tag(Tab.upcoming)
+    }
+
+    var popularView: some View {
+        PopularMoviesView()
+            .tabItem {
+                Image(icon: selection == .popular ? .popcornCircle : .popcorn)
+                Text("Popular")
+            }
+            .tag(Tab.popular)
+    }
+
+    var settingsView: some View {
+        SettingsView()
+            .tabItem {
+                Image(icon: selection == .settings ? .gearBadgeCheckmark : .gear)
+                Text("Settings")
+            }
+            .tag(Tab.settings)
+    }
+}
+
+#Preview("Light mode") {
+    HomeTabView()
+        .preferredColorScheme(.light)
+}
+
+#Preview("Dark mode") {
+    HomeTabView()
+        .preferredColorScheme(.dark)
 }
