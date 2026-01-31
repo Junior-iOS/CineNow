@@ -20,6 +20,7 @@ playground.xcworkspace
 # Secrets
 CineNow Secrets/
 Secrets.xcconfig
+Config/Secrets.xcconfig
 
 # Xcode
 DerivedData/

@@ -31,10 +31,8 @@ private extension HomeView {
                 ForEach(viewModel.movies) { movie in
                     Text(movie.title ?? "N/A")
                         .padding(.vertical, 4)
-                        .onAppear {
-                            Task {
-                                await viewModel.loadTrendingMoviesIfNeeded(currentItem: movie)
-                            }
+                        .task(id: movie.id) {
+                            await viewModel.loadTrendingMoviesIfNeeded(currentItem: movie)
                         }
                 }
 
