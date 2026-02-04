@@ -1,0 +1,61 @@
+name: CineNow
+
+options:
+  bundleIdPrefix: com.njdevelopment
+  deploymentTarget:
+    iOS: "16.0"
+
+settings:
+  base:
+    SWIFT_VERSION: 5.0
+    GENERATE_INFOPLIST_FILE: YES
+
+targets:
+  CineNow:
+    type: application
+    platform: iOS
+    sources:
+      - path: CineNow/App
+      - path: CineNow/Assets.xcassets
+      - path: CineNow/CineNowApp.swift
+      - path: CineNow/ContentView.swift
+    resources:
+      - path: CineNow/LaunchScreen.storyboard 
+    dependencies:
+      - target: CineNowCore
+      - target: Networking 
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.njdevelopment.CineNow
+    info:
+      path: CineNow/App/Info.plist
+      properties:
+        UILaunchStoryboardName: LaunchScreen
+
+  CineNowCore:
+    type: framework
+    platform: iOS
+    sources:
+      - path: CineNow/CineNowCore
+
+  Networking:
+    type: framework
+    platform: iOS
+    sources:
+      - path: CineNow/Networking
+
+  CineNowTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: CineNowTests
+    dependencies:
+      - target: CineNow
+
+  CineNowUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: CineNowUITests
+    dependencies:
+      - target: CineNow
