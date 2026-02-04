@@ -1,62 +1,98 @@
 # Xcode
-#
-# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
-
-## User settings
-xcuserdata/
-
-## Obj-C/Swift specific
+.DS_Store
+build/
+DerivedData/
 *.hmap
-
-## App packaging
 *.ipa
-*.dSYM.zip
 *.dSYM
+*.dSYM.zip
 
-## Playgrounds
+# Xcode workspace & user data
+xcuserdata/
+*.xcuserstate
+*.xcworkspace
+*.xccheckout
+*.moved-aside
+
+# Xcode project user files
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+
+# Swift Package Manager
+.build/
+Packages/
+.swiftpm/
+Package.resolved
+
+# CocoaPods
+Pods/
+# If you prefer to commit Podfile.lock, remova a linha abaixo
+# Podfile.lock
+
+# Carthage
+Carthage/Build/
+
+# SPM artifacts
+/.swiftpm/xcode/package.resolved
+
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output/
+
+# CocoaPods plugin caches
+# (optional caching folders)
+.cocoapods/
+
+# Bundler (if using)
+.bundle
+vendor/bundle
+
+# Playgrounds
 timeline.xctimeline
 playground.xcworkspace
 
-# Swift Package Manager
-#
-# Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
-# Packages/
-# Package.pins
-# Package.resolved
-# *.xcodeproj
-#
-# Xcode automatically generates this directory with a .xcworkspacedata file and xcuserdata
-# hence it is not needed unless you have added a package configuration file to your project
-# .swiftpm
+# Instrumentation & profiling
+*.trace
 
-.build/
+# Archives
+*.xcarchive
 
-# CocoaPods
-#
-# We recommend against adding the Pods directory to your .gitignore. However
-# you should judge for yourself, the pros and cons are mentioned at:
-# https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
-#
-# Pods/
-#
-# Add this line if you want to avoid checking in source code from the Xcode workspace
-# *.xcworkspace
+# Provisioning profiles
+*.mobileprovision
+*.provisionprofile
 
-# Carthage
-#
-# Add this line if you want to avoid checking in source code from Carthage dependencies.
-# Carthage/Checkouts
+# Signing
+exportOptions.plist
 
-Carthage/Build/
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
 
-# fastlane
-#
-# It is recommended to not store the screenshots in the git repo.
-# Instead, use fastlane to re-generate the screenshots whenever they are needed.
-# For more information about the recommended setup visit:
-# https://docs.fastlane.tools/best-practices/source-control/#source-control
+# Editor folders
+.idea/
+.vscode/
+*.swp
+*~.nib
 
-fastlane/report.xml
-fastlane/Preview.html
-fastlane/screenshots/**/*.png
-fastlane/test_output
+# Temporary files
+*.orig
+*.backup
+*.tmp
+
+# Logs
+*.log
+
+# Secrets (ensure you never commit keys / credentials)
+.env
+.env.*
+Secrets/
+Keys/
