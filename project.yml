@@ -1,5 +1,17 @@
 name: CineNow
 
+groups:
+  CineNow:
+    path: CineNow
+  Networking:
+    path: Networking
+  CineNowCore:
+    path: CineNowCore
+  CineNowTests:
+    path: CineNowTests
+  CineNowUITests:
+    path: CineNowUITests
+
 options:
   bundleIdPrefix: com.njdevelopment
   deploymentTarget:

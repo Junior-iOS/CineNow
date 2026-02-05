@@ -9,8 +9,8 @@ import Foundation
 import SwiftUI
 
 public enum Icon: String {
-    case house
-    case playHouseFill = "play.house.fill"
+    case chartLineUptrend = "chart.line.uptrend.xyaxis"
+    case chartLineUptrendCirlc = "chart.line.uptrend.xyaxis.circle"
     case calendar
     case calendarBadgeCheckmark = "calendar.badge.checkmark"
     case popcorn

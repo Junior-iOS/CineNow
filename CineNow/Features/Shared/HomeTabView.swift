@@ -10,18 +10,18 @@ import Foundation
 import SwiftUI
 
 enum Tab: Hashable {
-    case home
+    case trending
     case upcoming
     case popular
     case settings
 }
 
 struct HomeTabView: View {
-    @State private var selection: Tab = .home
+    @State private var selection: Tab = .trending
 
     var body: some View {
         TabView(selection: $selection) {
-            homeView
+            trendingView
             upcomingView
             popularView
             settingsView
@@ -31,17 +31,17 @@ struct HomeTabView: View {
 }
 
 private extension HomeTabView {
-    var homeView: some View {
+    var trendingView: some View {
         NavigationStack {
-            HomeView()
-                .navigationTitle("Home")
+            TrendingMoviesView()
+                .navigationTitle("Trending")
                 .navigationBarTitleDisplayMode(.inline)
         }
         .tabItem {
-            Image(icon: selection == .home ? .playHouseFill : .house)
-            Text("Home")
+            Image(icon: selection == .trending ? .chartLineUptrendCirlc : .chartLineUptrend)
+            Text("Trending")
         }
-        .tag(Tab.home)
+        .tag(Tab.trending)
     }
 
     var upcomingView: some View {
