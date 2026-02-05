@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		141CFA2D2F3310B900DA6C76 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 141CFA2C2F3310B900DA6C76 /* Colors.xcassets */; };
 		4A5B0E109228293249084678 /* CineNowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A365F08946845F08ED170DFE /* CineNowUITests.swift */; };
 		60CD37396EE38F7CA726634D /* CineNowCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C5EA68374AED09823AC4E64 /* CineNowCore.framework */; };
 		85F57D03E4DC5948CCE3AAF3 /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52E23A90115194B470B719CF /* Networking.framework */; };
@@ -67,6 +68,7 @@
 
 /* Begin PBXFileReference section */
 		0C5EA68374AED09823AC4E64 /* CineNowCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CineNowCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		141CFA2C2F3310B900DA6C76 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		52E23A90115194B470B719CF /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D63EDD18FFF6A714AEB3859 /* CineNowUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = CineNowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		82757BDA0135DB3214AD390F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -79,6 +81,24 @@
 		EC692C10EE5936DA304E89ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F73D8E09A5B7833859EE7CA4 /* CineNowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CineNowTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		141CFA9A2F3311E300DA6C76 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				AppStartingView.swift,
+				AppStartingViewModel.swift,
+				HomeTabView.swift,
+			);
+			target = D1EBDEAB5622ABD0E972AD21 /* CineNow */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		141CFA922F33110800DA6C76 /* Extensions */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Extensions; sourceTree = "<group>"; };
+		141CFA972F3311CE00DA6C76 /* Components */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (141CFA9A2F3311E300DA6C76 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Components; sourceTree = "<group>"; };
+		141CFAA02F3312FC00DA6C76 /* Features */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Features; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A2CEBD995CB0C9C21DF5D875 /* Frameworks */ = {
@@ -113,6 +133,7 @@
 		618906C019014F70F3422190 /* CineNowCore */ = {
 			isa = PBXGroup;
 			children = (
+				141CFA972F3311CE00DA6C76 /* Components */,
 			);
 			name = CineNowCore;
 			path = CineNow/CineNowCore;
@@ -141,8 +162,8 @@
 		A9233D7BD3EB76A5C14FC9D2 /* CineNow */ = {
 			isa = PBXGroup;
 			children = (
-				EC692C10EE5936DA304E89ED /* Assets.xcassets */,
-				DD7F4EF13DBED41E6C3B6552 /* CineNowApp.swift */,
+				141CFAA02F3312FC00DA6C76 /* Features */,
+				141CFA922F33110800DA6C76 /* Extensions */,
 				82757BDA0135DB3214AD390F /* ContentView.swift */,
 			);
 			path = CineNow;
@@ -152,6 +173,9 @@
 			isa = PBXGroup;
 			children = (
 				9A7BC14976B25853AB1417CC /* Info.plist */,
+				EC692C10EE5936DA304E89ED /* Assets.xcassets */,
+				141CFA2C2F3310B900DA6C76 /* Colors.xcassets */,
+				DD7F4EF13DBED41E6C3B6552 /* CineNowApp.swift */,
 			);
 			name = App;
 			path = CineNow/App;
@@ -234,6 +258,10 @@
 				AFF96AAE33C7AA5F2BF65DF1 /* PBXTargetDependency */,
 				C1983D57921FCA37F3C950D2 /* PBXTargetDependency */,
 			);
+			fileSystemSynchronizedGroups = (
+				141CFA922F33110800DA6C76 /* Extensions */,
+				141CFAA02F3312FC00DA6C76 /* Features */,
+			);
 			name = CineNow;
 			productName = CineNow;
 			productReference = 96F91015465368919EC3EB8F /* CineNow.app */;
@@ -295,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D58F3128750A4D362C93E966 /* Assets.xcassets in Resources */,
+				141CFA2D2F3310B900DA6C76 /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,8 +16,9 @@ targets:
     platform: iOS
     sources:
       - path: CineNow/App
-      - path: CineNow/Assets.xcassets
-      - path: CineNow/CineNowApp.swift
+      - path: CineNow/App/Assets.xcassets
+      - path: CineNow/App/Colors.xcassets
+      - path: CineNow/App/CineNowApp.swift
       - path: CineNow/ContentView.swift
     resources:
       - path: CineNow/LaunchScreen.storyboard 
