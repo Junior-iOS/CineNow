@@ -1,0 +1,45 @@
+# SwiftLint configuration for CineNow
+
+# Regras totalmente desativadas
+disabled_rules:
+  - line_length
+
+# Regras opt-in
+opt_in_rules:
+  - empty_count
+  - closure_spacing
+  - redundant_optional_initialization
+
+# ===== Severidade: WARNING =====
+
+trailing_whitespace:
+  severity: warning
+  ignores_empty_lines: false
+
+force_unwrapping:
+  severity: warning
+
+identifier_name:
+  severity: warning
+  min_length: 2
+  max_length: 40
+  excluded:
+    - id
+    - vm
+
+indentation_width:
+  severity: warning
+  indentation_width: 4
+  include_comments: false
+
+# ===== Escopo =====
+
+included:
+  - CineNow
+  - CineNowCore
+  - Networking
+
+excluded:
+  - DerivedData
+  - .build
+  - .swiftpm

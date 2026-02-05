@@ -1,0 +1,11 @@
+--indent 4
+--indentcase false
+--trimwhitespace always
+--swiftversion 5.9
+
+--disable redundantSelf
+--disable trailingClosures
+
+--exclude DerivedData
+--exclude .build
+--exclude .swiftpm

@@ -8,17 +8,16 @@
 import XCTest
 
 final class CineNowUITestsLaunchTests: XCTestCase {
-
-    override class var runsForEachTargetApplicationUIConfiguration: Bool {
+    override final class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
     }
 
-    override func setUpWithError() throws {
+    override func setUpWithError() {
         continueAfterFailure = false
     }
 
     @MainActor
-    func testLaunch() throws {
+    func testLaunch() {
         let app = XCUIApplication()
         app.launch()
 
