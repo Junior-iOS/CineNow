@@ -14,17 +14,20 @@ targets:
   CineNow:
     type: application
     platform: iOS
+    preBuildScripts:
+      - name: SwiftLint
+        script: Scripts/swiftlint.sh
     sources:
-      - path: CineNow/App
-      - path: CineNow/App/Assets.xcassets
-      - path: CineNow/App/Colors.xcassets
-      - path: CineNow/App/CineNowApp.swift
-      - path: CineNow/ContentView.swift
+      - path: CineNow
+        excludes:
+          - CineNowCore
+          - Networking
+          - LaunchScreen.storyboard
     resources:
-      - path: CineNow/LaunchScreen.storyboard 
+      - path: CineNow/LaunchScreen.storyboard
     dependencies:
       - target: CineNowCore
-      - target: Networking 
+      - target: Networking
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.njdevelopment.CineNow

@@ -66,7 +66,7 @@ struct AppColorTheme {
         .preferredColorScheme(.dark)
 }
 
-fileprivate struct Preview: View {
+private struct Preview: View {
     var body: some View {
         VStack {
             VStack {
@@ -75,10 +75,10 @@ fileprivate struct Preview: View {
                 Text("Subtitle")
                     .foregroundColor(.appTheme.secondaryText)
             }
-            
+
             Divider()
                 .foregroundColor(.appTheme.divider)
-            
+
             Button { } label: {
                 Text("Get started")
                     .padding()

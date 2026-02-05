@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AppStartingView: View {
     @StateObject private var viewModel = AppStartingViewModel()
-    
+
     var body: some View {
         Group {
             if !viewModel.shouldShowLoginView {
