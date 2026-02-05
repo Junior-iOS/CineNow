@@ -1,5 +1,5 @@
 //
-//  View+Colors.swift
+//  View+Color.swift
 //  CineNow
 //
 //  Created by NJ Development on 04/02/26.
@@ -79,7 +79,7 @@ private struct Preview: View {
             Divider()
                 .foregroundColor(.appTheme.divider)
 
-            Button { } label: {
+            Button {} label: {
                 Text("Get started")
                     .padding()
                     .background(Color.appTheme.accent)

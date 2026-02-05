@@ -11,6 +11,6 @@ import Foundation
 @MainActor
 final class LoginViewModel: ObservableObject {
     func teste() {
-            print("teste swiftlint")
+        print("teste swiftlint")
     }
 }

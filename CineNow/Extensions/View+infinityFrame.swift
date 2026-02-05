@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-extension View {
-    public func infinityFrame() -> some View {
+public extension View {
+    func infinityFrame() -> some View {
         self.frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }

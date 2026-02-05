@@ -9,13 +9,13 @@ import Foundation
 import SwiftUI
 
 public enum Icon: String {
-    case house = "house"
+    case house
     case playHouseFill = "play.house.fill"
-    case calendar = "calendar"
+    case calendar
     case calendarBadgeCheckmark = "calendar.badge.checkmark"
-    case popcorn = "popcorn"
+    case popcorn
     case popcornCircle = "popcorn.circle"
-    case gear = "gear"
+    case gear
     case gearBadgeCheckmark = "gear.badge.checkmark"
 }
 
