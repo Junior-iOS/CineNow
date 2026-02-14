@@ -5,7 +5,7 @@
 //  Created by NJ Development on 05/02/26.
 //
 
-import CineNowCore
+import Core
 import SwiftUI
 
 public struct HeaderView: View {

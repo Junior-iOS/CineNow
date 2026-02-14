@@ -5,11 +5,11 @@
 //  Created by NJ Development on 04/02/26.
 //
 
-import CineNowCore
+import Core
 import SwiftUI
 
 struct TrendingMoviesView: View {
-    @ObservedObject private var viewModel = TrendingMoviesViewModel()
+    @StateObject private var viewModel = TrendingMoviesViewModel()
 
     var body: some View {
         homeView
@@ -30,12 +30,8 @@ private extension TrendingMoviesView {
 
                 ForEach(viewModel.movies, id: \.id) { movie in
                     Text(movie.title ?? "N/A")
-                        .onAppear {
-                            if movie.id == viewModel.movies.last?.id {
-                                Task {
-                                    await viewModel.loadTrendingMovies()
-                                }
-                            }
+                        .task(id: movie.id) {
+                            await viewModel.loadMoreIfNeeded(currentMovie: movie)
                         }
                 }
 

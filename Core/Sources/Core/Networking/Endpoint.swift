@@ -31,7 +31,7 @@ public struct Endpoint {
 //    }
 
     private var apiKey: String {
-        "apiKey"
+        "6146dc118365390078bd38022d746f80"
     }
 
     private var path: String {
@@ -52,7 +52,7 @@ public struct Endpoint {
     private var queryItems: [URLQueryItem] {
         [
             URLQueryItem(name: "api_key", value: apiKey),
-            URLQueryItem(name: "page", value: String(page)),
+            URLQueryItem(name: "page", value: String(page))
         ]
     }
 

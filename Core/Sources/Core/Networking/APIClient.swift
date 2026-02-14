@@ -20,6 +20,7 @@ public final class APIClient: APIClientProcotol {
         decoder: JSONDecoder = JSONDecoder()
     ) {
         self.session = session
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
         self.decoder = decoder
     }
 

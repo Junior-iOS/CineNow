@@ -7,9 +7,9 @@
 
 import Foundation
 
-public enum ViewState: Equatable {
+public enum ViewState<T: Equatable>: Equatable {
     case idle
     case loading
-    case loaded
+    case loaded(T)
     case error(String)
 }

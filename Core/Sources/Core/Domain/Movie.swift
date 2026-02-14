@@ -11,12 +11,6 @@ public struct MovieResponse: Codable {
     public let page: Int
     public let results: [Movie]
     public let totalPages: Int?
-
-    enum CodingKeys: String, CodingKey {
-        case page
-        case results
-        case totalPages = "total_pages"
-    }
 }
 
 public struct Movie: Codable, Identifiable, Sendable, Equatable {
@@ -28,18 +22,26 @@ public struct Movie: Codable, Identifiable, Sendable, Equatable {
     public let releaseDate: String?
     public let voteAverage: Double?
 
+    public init(
+        id: Int,
+        mediaType: String?,
+        title: String?,
+        posterPath: String?,
+        overview: String?,
+        releaseDate: String?,
+        voteAverage: Double?
+    ) {
+        self.id = id
+        self.mediaType = mediaType
+        self.title = title
+        self.posterPath = posterPath
+        self.overview = overview
+        self.releaseDate = releaseDate
+        self.voteAverage = voteAverage
+    }
+
     public var posterURL: URL? {
         guard let path = posterPath else { return nil }
         return URL(string: "https://image.tmdb.org/t/p/w500" + path)
-    }
-
-    enum CodingKeys: String, CodingKey {
-        case id
-        case mediaType = "media_type"
-        case title
-        case posterPath = "poster_path"
-        case overview
-        case releaseDate = "release_date"
-        case voteAverage = "vote_average"
     }
 }

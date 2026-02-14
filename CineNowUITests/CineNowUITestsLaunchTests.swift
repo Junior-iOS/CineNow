@@ -12,7 +12,7 @@ final class CineNowUITestsLaunchTests: XCTestCase {
         true
     }
 
-    override func setUpWithError() {
+    override func setUpWithError() throws {
         continueAfterFailure = false
     }
 
