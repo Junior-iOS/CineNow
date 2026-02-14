@@ -1,5 +1,17 @@
 name: CineNow
 
+groups:
+  CineNow:
+    path: CineNow
+  Networking:
+    path: Networking
+  CineNowCore:
+    path: CineNowCore
+  CineNowTests:
+    path: CineNowTests
+  CineNowUITests:
+    path: CineNowUITests
+
 options:
   bundleIdPrefix: com.njdevelopment
   deploymentTarget:
@@ -14,16 +26,20 @@ targets:
   CineNow:
     type: application
     platform: iOS
+    preBuildScripts:
+      - name: SwiftLint
+        script: Scripts/swiftlint.sh
     sources:
-      - path: CineNow/App
-      - path: CineNow/Assets.xcassets
-      - path: CineNow/CineNowApp.swift
-      - path: CineNow/ContentView.swift
+      - path: CineNow
+        excludes:
+          - CineNowCore
+          - Networking
+          - LaunchScreen.storyboard
     resources:
-      - path: CineNow/LaunchScreen.storyboard 
+      - path: CineNow/LaunchScreen.storyboard
     dependencies:
       - target: CineNowCore
-      - target: Networking 
+      - target: Networking
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.njdevelopment.CineNow
